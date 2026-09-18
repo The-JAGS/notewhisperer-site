@@ -10,45 +10,123 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.6; max-width: 720px; margin: 0 auto; padding: 2rem 1.25rem; color: #1a1a1a;
     }
-    @media (prefers-color-scheme: dark) { body { color: #e8e8e8; background: #111; } a { color: #4da3ff; } }
-    h1 { font-size: 1.9rem; } h2 { font-size: 1.25rem; margin-top: 2rem; }
+    @media (prefers-color-scheme: dark) {
+      body { color: #e8e8e8; background: #111; } a { color: #4da3ff; }
+      th, td { border-color: #333 !important; }
+      th { background: #1a1a1a !important; }
+    }
+    h1 { font-size: 1.9rem; } h2 { font-size: 1.25rem; margin-top: 2rem; } h3 { font-size: 1.05rem; margin-top: 1.5rem; }
     .muted { color: #888; font-size: 0.9rem; }
     a { color: #0066cc; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+    th, td { border: 1px solid #ddd; padding: 0.5rem 0.6rem; text-align: left; vertical-align: top; }
+    th { background: #f5f5f5; }
+    ul li { margin-bottom: 0.35rem; }
   </style>
 </head>
 <body>
   <h1>Privacy Policy</h1>
-  <p class="muted">Note Whisperer · Last updated 11 September 2026</p>
+  <p class="muted">Note Whisperer · Last updated 18 September 2026</p>
 
-  <p>Note Whisperer ("the app") is designed to keep your data on your device. This policy explains what the app does and does not do with your information.</p>
+  <p>Note Whisperer ("the app") records voice notes and, with your explicit permission, uses a third-party AI service to transcribe and summarise them. This policy explains exactly what data the app handles, how it is collected, what it is used for, who it is shared with, and the choices you have.</p>
 
-  <h2>Data we collect</h2>
-  <p><strong>We (the developer) do not collect, store, transmit, or have access to any of your data.</strong> Note Whisperer does not operate any servers, does not use analytics or tracking SDKs, and does not require an account.</p>
+  <h2>1. Who we are</h2>
+  <p>Note Whisperer is developed and published by an independent developer ("we", "us"). We operate <strong>no servers, no accounts, and no analytics</strong>. We never receive, store, or have access to your recordings, transcripts, or API key. Contact: <a href="mailto:feat_musty2y@icloud.com">feat_musty2y@icloud.com</a>.</p>
 
-  <h2>Data stored on your device</h2>
+  <h2>2. What data the app handles, how it is collected, and why</h2>
+  <p>The app does not collect any data for our own purposes. The following data is created on, and stays on, your device — except where the table states it is sent to OpenAI for AI processing, which only ever happens after you have granted permission in the app.</p>
+
+  <table>
+    <thead>
+      <tr><th>Data</th><th>How it is collected</th><th>What it is used for</th><th>Where it goes</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Audio recordings</strong></td>
+        <td>Captured by the device microphone only while you are actively recording a voice note on iPhone or Apple Watch, or imported by you from a file you choose.</td>
+        <td>Playback in the app, and — with your permission — transcription.</td>
+        <td>Stored locally on your device. Sent to OpenAI for transcription only if you enable AI processing.</td>
+      </tr>
+      <tr>
+        <td><strong>Transcripts, summaries, key points, and Q&amp;A</strong></td>
+        <td>Generated from your audio by OpenAI and returned to your device.</td>
+        <td>Displayed in the app so you can read, search, copy, and share your notes.</td>
+        <td>Stored locally on your device. The transcript is sent back to OpenAI to produce the summary, key points, and Q&amp;A.</td>
+      </tr>
+      <tr>
+        <td><strong>Your analysis instructions (system prompt)</strong></td>
+        <td>Entered or edited by you in Settings; a default is provided.</td>
+        <td>Tells the AI model how to analyse your transcript.</td>
+        <td>Stored locally on your device. Sent to OpenAI alongside each transcript.</td>
+      </tr>
+      <tr>
+        <td><strong>Your OpenAI API key</strong></td>
+        <td>Entered by you in Settings. The app has no key of its own and no login.</td>
+        <td>Authenticating your own requests to the OpenAI API and billing them to your own OpenAI account.</td>
+        <td>Stored in the device's secure Keychain. Sent only to OpenAI, as the authentication header of your own requests.</td>
+      </tr>
+      <tr>
+        <td><strong>App preferences</strong> (chosen models, language, appearance, permission status)</td>
+        <td>Set by you in the app.</td>
+        <td>Remembering your settings between launches.</td>
+        <td>Stored locally on your device only. Never transmitted.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>The app does <strong>not</strong> collect or transmit: your name, email address, phone number, contacts, location, photos, health data, advertising identifiers, device identifiers, usage analytics, or crash telemetry. There are no third-party analytics, advertising, or tracking SDKs in the app.</p>
+
+  <h2>3. Your permission is required before any data is shared</h2>
+  <p>On first launch, before any recording can be processed, the app shows a disclosure screen that names OpenAI as the recipient, lists exactly what will be sent, explains how it will be used, and asks you to agree or decline. <strong>Nothing leaves your device unless you tap to agree.</strong></p>
   <ul>
-    <li><strong>Audio recordings and transcripts</strong> are stored locally on your device only.</li>
-    <li>Your <strong>OpenAI API key</strong> is stored in the device's secure Keychain and never leaves your device except to authenticate directly with OpenAI.</li>
+    <li>If you decline, the app still records, stores, and plays back voice notes entirely on your device, and sends nothing to OpenAI or anyone else.</li>
+    <li>You can grant or withdraw this permission at any time in <strong>Settings → AI Processing → "Data Shared with OpenAI"</strong>, which re-opens the same disclosure and offers "Turn Off AI Processing". When it is off, no audio, transcript, or prompt is transmitted, and queued recordings simply wait on your device.</li>
+    <li>That section also shows the current state (Allowed or Off) and the date you granted permission.</li>
   </ul>
 
-  <h2>Third-party processing (OpenAI)</h2>
-  <p>To transcribe and analyze your recordings, the app sends your audio and the resulting text directly from your device to the OpenAI API, authenticated with your own API key. This transmission happens between your device and OpenAI; it does not pass through any server operated by us.</p>
-  <p>Your use of the OpenAI API is governed by OpenAI's terms and privacy policy. Per OpenAI's API data usage policies, data submitted through the API is not used to train their models by default. Please review:</p>
+  <h2>4. Third-party AI processing — OpenAI</h2>
+  <p>When AI processing is enabled, the app sends the data marked above <strong>directly from your device to the OpenAI API</strong> (<code>api.openai.com</code>), operated by <strong>OpenAI, L.L.C.</strong>, over an encrypted HTTPS connection, authenticated with your own OpenAI API key. These requests do not pass through any server operated by us, and we receive no copy of them.</p>
+
+  <h3>What OpenAI receives and what they do with it</h3>
+  <p>OpenAI receives the audio file, the resulting transcript, and your analysis instructions, and uses them to return the transcript, summary, key points, and Q&amp;A for that recording.</p>
+
+  <h3>Confirmation of equivalent protection</h3>
+  <p>Data submitted through the OpenAI API is governed by OpenAI's API data usage policies, privacy policy, and Data Processing Addendum. Based on those published commitments, OpenAI provides protections equivalent to those described in this policy for the data the app shares with them, specifically:</p>
+  <ul>
+    <li>API inputs and outputs are <strong>not used to train or improve OpenAI's models by default</strong>;</li>
+    <li>API data is retained for <strong>up to 30 days</strong> for abuse and misuse monitoring and then deleted, except where they are legally required to retain it;</li>
+    <li>data is transmitted over encrypted connections and encrypted at rest;</li>
+    <li>OpenAI acts as a data processor for API data and offers a Data Processing Addendum covering GDPR obligations, including onward-transfer safeguards.</li>
+  </ul>
+  <p>Because your requests are made with your own API key, your use of the OpenAI API is also directly governed by your agreement with OpenAI. Please review:</p>
   <ul>
     <li><a href="https://openai.com/policies/privacy-policy/">OpenAI Privacy Policy</a></li>
     <li><a href="https://openai.com/policies/api-data-usage-policies/">OpenAI API Data Usage Policies</a></li>
+    <li><a href="https://openai.com/policies/data-processing-addendum/">OpenAI Data Processing Addendum</a></li>
   </ul>
+  <p>We have no control over OpenAI's own systems. If you do not wish to share data with OpenAI, decline the permission (or turn it off in Settings) and use the app as a local voice recorder.</p>
 
-  <h2>Microphone</h2>
-  <p>The app uses the microphone solely to record the voice notes you choose to create. Audio is only captured while you are recording.</p>
+  <h2>5. Microphone and other permissions</h2>
+  <p>The app requests microphone access solely to record the voice notes you choose to create; audio is captured only while a recording is in progress. Recording may continue while the app is in the background so that a recording you started is not cut off. No other sensitive device permissions are required. You can revoke microphone access at any time in the iOS Settings app.</p>
 
-  <h2>Children</h2>
-  <p>The app is not directed at children and does not knowingly collect information from anyone, as it collects nothing.</p>
+  <h2>6. Apple Watch and Live Activities</h2>
+  <p>Recordings made on Apple Watch are transferred to your paired iPhone over Apple's encrypted device-to-device connectivity and are processed there under the same rules described above. Live Activities show only the elapsed recording time on your own device.</p>
 
-  <h2>Changes</h2>
-  <p>If this policy changes, the updated version will be posted on this page with a revised date.</p>
+  <h2>7. Retention and deletion</h2>
+  <p>Recordings, transcripts, and generated notes remain on your device until you delete them. Deleting a recording in the app removes its audio file and all associated text from your device. Deleting the app removes all of its local data, including the API key from the Keychain. Data held by OpenAI is subject to their retention policy described in section 4; requests about data in their systems should be directed to OpenAI.</p>
 
-  <h2>Contact</h2>
+  <h2>8. Legal bases and your rights</h2>
+  <p>Where the GDPR or similar laws apply, the legal basis for sharing data with OpenAI is your <strong>consent</strong>, which you give in the app and can withdraw at any time in Settings → Privacy &amp; AI Processing. Because we hold no data about you, requests to access, correct, export, or delete data in our possession cannot apply to us — you control all of it directly on your device. For data held by OpenAI, please contact OpenAI.</p>
+
+  <h2>9. Children</h2>
+  <p>The app is not directed at children and we do not knowingly collect information from anyone, as we collect nothing.</p>
+
+  <h2>10. Changes</h2>
+  <p>If this policy changes, the updated version will be posted on this page with a revised date. If a change materially affects what is shared with OpenAI, the app will ask for your permission again.</p>
+
+  <h2>11. Contact</h2>
   <p>Questions about this policy? Contact <a href="mailto:feat_musty2y@icloud.com">feat_musty2y@icloud.com</a>.</p>
+
+  <p class="muted"><a href="index.html">Support</a></p>
 </body>
 </html>
